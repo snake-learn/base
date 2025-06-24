@@ -1,0 +1,1 @@
+# Provide Parent POM for all child services.
