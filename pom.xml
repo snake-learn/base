@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -18,34 +18,56 @@
   <description>base</description>
 
   <properties>
-    <!-- BASED -->
+    <!-- <editor-fold desc="SNAKE COMMON"> -->
+    <snake-common.version>0.0.1-SNAPSHOT</snake-common.version>
+    <!-- </editor-fold> -->
+
+    <!-- <editor-fold desc="BASED"> -->
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
     <java.version>21</java.version>
     <spring-cloud.version>2023.0.1</spring-cloud.version>
-    <!-- UTILITIES -->
+    <!-- </editor-fold> -->
+
+    <!-- <editor-fold desc="UTILITIES"> -->
     <commons.collections4.version>4.4</commons.collections4.version>
     <commons-lang3.version>3.12.0</commons-lang3.version>
     <commons-codec.version>1.17.0</commons-codec.version>
     <json.version>20240303</json.version>
-    <!-- QOL -->
+    <!-- </editor-fold> -->
+
+    <!-- <editor-fold desc="QOL"> -->
     <lombok.version>1.18.32</lombok.version>
     <mapstruct.version>1.5.5.Final</mapstruct.version>
     <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
-    <!-- SWAGGER -->
+    <!-- </editor-fold> -->
+
+    <!-- <editor-fold desc="SWAGGER"> -->
     <springdoc-openapi-starter-webmvc-ui.version>2.5.0</springdoc-openapi-starter-webmvc-ui.version>
-    <!-- OTHER -->
+    <!-- </editor-fold> -->
+
+    <!-- <editor-fold desc="OTHER"> -->
     <spotbugs-annotations.version>4.8.6</spotbugs-annotations.version>
+    <!-- </editor-fold> -->
   </properties>
 
   <packaging>pom</packaging>
 
   <modules>
+    <module>../common</module>
     <module>../notification</module>
   </modules>
 
   <dependencyManagement>
     <dependencies>
-      <!-- POM -->
+      <!-- <editor-fold desc="SNAKE COMMON"> -->
+      <dependency>
+        <groupId>com.snake</groupId>
+        <artifactId>common</artifactId>
+        <version>${snake-common.version}</version>
+      </dependency>
+      <!-- </editor-fold> -->
+
+      <!-- <editor-fold desc="POM"> -->
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
@@ -53,7 +75,9 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <!-- QOL -->
+      <!-- </editor-fold> -->
+
+      <!-- <editor-fold desc="QOL"> -->
       <dependency>
         <groupId>org.mapstruct</groupId>
         <artifactId>mapstruct</artifactId>
@@ -69,7 +93,9 @@
         <artifactId>lombok-mapstruct-binding</artifactId>
         <version>${lombok-mapstruct-binding.version}</version>
       </dependency>
-      <!-- UTILITIES -->
+      <!-- </editor-fold> -->
+
+      <!-- <editor-fold desc="UTILITIES"> -->
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-collections4</artifactId>
@@ -90,13 +116,17 @@
         <artifactId>commons-codec</artifactId>
         <version>${commons-codec.version}</version>
       </dependency>
-      <!-- SWAGGER -->
+      <!-- </editor-fold> -->
+
+      <!-- <editor-fold desc="SWAGGER"> -->
       <dependency>
         <groupId>org.springdoc</groupId>
         <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
         <version>${springdoc-openapi-starter-webmvc-ui.version}</version>
       </dependency>
-      <!-- OTHER -->
+      <!-- </editor-fold> -->
+
+      <!-- <editor-fold desc="OTHER"> -->
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
@@ -112,6 +142,7 @@
         <artifactId>ffmpeg-platform</artifactId>
         <version>${org.bytedeco.ffmpeg-platform.version}</version>
       </dependency>
+      <!-- </editor-fold> -->
     </dependencies>
   </dependencyManagement>
 </project>
