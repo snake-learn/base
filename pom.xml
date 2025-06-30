@@ -45,6 +45,10 @@
     <springdoc-openapi-starter-webmvc-ui.version>2.5.0</springdoc-openapi-starter-webmvc-ui.version>
     <!-- </editor-fold> -->
 
+    <!-- <editor-fold desc="JJWT properties"> -->
+    <jjwt.version>0.12.5</jjwt.version>
+    <!-- </editor-fold> -->
+
     <!-- <editor-fold desc="OTHER"> -->
     <spotbugs-annotations.version>4.8.6</spotbugs-annotations.version>
     <!-- </editor-fold> -->
@@ -54,6 +58,7 @@
 
   <modules>
     <module>../common</module>
+    <module>../storage</module>
     <module>../notification</module>
   </modules>
 
@@ -123,6 +128,24 @@
         <groupId>org.springdoc</groupId>
         <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
         <version>${springdoc-openapi-starter-webmvc-ui.version}</version>
+      </dependency>
+      <!-- </editor-fold> -->
+
+      <!-- <editor-fold desc="JJWT"> -->
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>${jjwt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>${jjwt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>${jjwt.version}</version>
       </dependency>
       <!-- </editor-fold> -->
 
